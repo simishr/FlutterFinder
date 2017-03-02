@@ -1,0 +1,1 @@
+// includes 2 routes a. GET route to survey b. default USE route leading to home.html

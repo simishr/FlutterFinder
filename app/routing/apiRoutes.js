@@ -1,0 +1,2 @@
+// contains 2 routes a. GET route to api/friends(will display a JSON of all possible friends)
+// b. a POST routes api/friends that handles incoming survey results. it will also handle the compatibility logic.
