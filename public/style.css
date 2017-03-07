@@ -1,20 +1,27 @@
-
-body {
-	background: url("background.jpg");
-	padding: 200px;
-	margin-top: 100px;
+.main-page {
+background: url("background.jpg");
+padding: 150px;
+margin-top: 75px;
 }
 
 .jumbotron, .btn-danger {
-	color: darkred;
-	font-family: 'Shadows Into Light', cursive;
+background-color: #ff8a80;
+font-family: 'Shadows Into Light', cursive;
+}
+
+.btn-danger {
+background-color: white;
+color:#ff8a80;
 }
 
 #resultsModal {
-	background-color: white;
-	opacity: 0.8px;
+background-color: white;
+opacity: 0.8px;
 }
 
 .survey-area {
-	background-color: lightgreen;
+background-color: #ff8a80;
+font-family: 'Shadows Into Light', cursive;
+padding: 150px;
+font-size: 20px;
 }

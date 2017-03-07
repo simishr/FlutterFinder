@@ -13,7 +13,7 @@ module.exports = function(app) {
         var bestMatch = {
             name: "",
             photo: "",
-            friendDifference: 1000
+            friendDifference: 500
         };
 
         console.log(req.body);
@@ -25,7 +25,7 @@ module.exports = function(app) {
         console.log(userScores);
 
         var totalDifference = 0; //this variable calculates difference between user's scores and others scores.
-
+        
         for (var i = 0; i < friends.length; i++) {
             console.log(friends[i]);
             totalDifference = 0;
@@ -34,20 +34,21 @@ module.exports = function(app) {
 
                 // calculating the difference between scores and sum them into totalDifference.
                 totalDifference += Math.abs(parseInt(userScores[j]) - parseInt(friends[i].scores[j]));
-                // if the sum of the difference is less than the differences of the current "best match"
-                if (totalDifference <= bestMatch.friendDifference) {
-                    // resetting the bestMatch to the new friend.
-                    bestMatch.name = friends[i].name;
-                    bestMatch.photo = friends[i].photo;
-                    bestMatch.friendDifference = totalDifference;
-                }
+            }
+            // if the sum of the difference is less than the differences of the current "best match"
+            if (totalDifference <= bestMatch.friendDifference) {
+                // resetting the bestMatch to the new friend.
+                bestMatch.name = friends[i].name;
+                bestMatch.photo = friends[i].photo;
+                bestMatch.friendDifference = totalDifference;
+
             }
         }
         // after checking, saving the user's data to database
         friends.push(userData);
 
         // returning a JSON with the user's bestMatch.
-        res.json(friends);
+        res.json(bestMatch);
     });
 
 }
